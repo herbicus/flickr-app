@@ -67,7 +67,7 @@ angular.module('flickrModule').service('flickrService', ['$http', '$q', 'clientI
 
   };
 
-  // GET PHOTO ID ( URL )
+  // SEARCH
   this.getSearch = function(photo_id) {
     var deferred = $q.defer();
 
