@@ -1,13 +1,13 @@
 <div class="flickr-view">
 	<h1>Flickr App</h1>
 
-  <form data-ng-submit="search()" novalidate>
+  <!--<form data-ng-submit="search()" novalidate>-->
 
-    <input type="text" name="searchInput"
-           ng-model="flickrCtrl.searchInput"
-           ng-model-options="{ updateOn: 'blur'}">
+    <!--<input type="text" name="searchInput"-->
+           <!--ng-model="flickrCtrl.searchInput"-->
+           <!--ng-model-options="{ updateOn: 'blur'}">-->
 
-  </form>
+  <!--</form>-->
 
   <div class="row" data-ng-repeat="item in flickrCtrl.flickrData.photo"
    >
@@ -16,7 +16,7 @@
     <p><strong>{{ item.id }}</strong></p>
     <p><strong>{{ item.owner }}</strong></p>
 
-    <img data-ng-src="https://{{ flickrCtrl.photoData }}"/>
+    <img data-ng-src="https://{{ flickrCtrl.photoData.photo }}"/>
 
     <img ng-src="https://{{ flickrCtrl.results.photo }}"/>
 
@@ -29,7 +29,7 @@
   </div>
 
   <h1>Yo</h1>
-  <div data-ng-repeat="item in flickrCtrl.results.photo" class="row">
+  <div data-ng-repeat="item in flickrCtrl.photoData.photo" class="row">
     <img ng-src="https://{{ flickrCtrl.imageSRc }}"/>
     <img data-ng-src="https://farm{{flickrCtrl.farm}}.staticflickr.com/{{flickrCtrl.server}}/{{flickrCtrl.id}}_{{flickrCtrl.secret}}_b.jpg" alt=""/>
 
