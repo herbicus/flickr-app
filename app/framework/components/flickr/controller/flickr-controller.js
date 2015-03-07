@@ -26,7 +26,7 @@ angular.module('flickrModule').controller('flickrController', ['$scope', 'flickr
 
   };
 
-
+  ctrl.getPhotoId();
  //ctrl.getPhotoId(16535411828);
 
 }]);

@@ -1,5 +1,5 @@
 <div class="flickr-view">
-	<h1>hello world</h1>
+	<h1>Flickr App</h1>
 
   <div class="row" data-ng-repeat="item in flickrCtrl.flickrData.photo"
    >
@@ -10,6 +10,8 @@
 
     <img data-ng-src="https://{{ flickrCtrl.photoData }}"/>
 
+    <img ng-src="https://{{ flickrCtrl.results.photo }}"/>
+
     <!--<img ng-src="http://{{ flickrCtrl.imageSRc }}"/>-->
 
     <!--<img data-ng-src="https://farm{{flickrCtrl.farm}}.staticflickr.com/{{flickrCtrl.server}}/{{flickrCtrl.id}}_{{flickrCtrl.secret}}_b.jpg" alt=""/>-->
@@ -17,7 +19,8 @@
     <!--<img data-ng-src="{{ item.results.photo.urls.url[0]._content }}" alt=""/>-->
   </div>
 
-  <div data-ng-repeat="item in flickrCtrl.photoData" class="row">
+  <h1>Yo</h1>
+  <div data-ng-repeat="item in flickrCtrl.results.photo" class="row">
     <img ng-src="https://{{ flickrCtrl.imageSRc }}"/>
     <img data-ng-src="https://farm{{flickrCtrl.farm}}.staticflickr.com/{{flickrCtrl.server}}/{{flickrCtrl.id}}_{{flickrCtrl.secret}}_b.jpg" alt=""/>
 
