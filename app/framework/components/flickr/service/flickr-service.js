@@ -15,7 +15,7 @@ angular.module('flickrModule').service('flickrService', ['$http', '$q', 'clientI
         photo_id: photo_id,
         method: 'flickr.photos.getInfo',
         api_key: 'a34fbc08e0da65245dbc6c954214eda4',
-        text: 'sky',
+        text: 'url',
         format: 'json',
         nojsoncallback: 1
       }
@@ -51,6 +51,34 @@ angular.module('flickrModule').service('flickrService', ['$http', '$q', 'clientI
         method: 'flickr.interestingness.getList',
         api_key: 'a34fbc08e0da65245dbc6c954214eda4',
         text: 'sky',
+        format: 'json',
+        nojsoncallback: 1
+      }
+
+    }).success(function (results) {
+      var data = results || [];
+      deferred.resolve(data);
+    }).error(function (error) {
+      console.error(error);
+      deferred.reject(error);
+    });
+
+    return deferred.promise;
+
+  };
+
+  // GET PHOTO ID ( URL )
+  this.getSearch = function(photo_id) {
+    var deferred = $q.defer();
+
+    $http({
+      method: 'GET',
+      url: 'https://api.flickr.com/services/rest',
+      params: {
+        photo_id: photo_id,
+        method: 'flickr.photos.search',
+        api_key: 'a34fbc08e0da65245dbc6c954214eda4',
+        text: 'search',
         format: 'json',
         nojsoncallback: 1
       }
